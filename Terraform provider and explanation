@@ -1,1 +1,13 @@
+1. provider
+What This Means:
+provider "aws":
+This tells Terraform you're using AWS as your cloud provider.
 
+region = "ap-south-2":
+Specifies the AWS region where Terraform will create resources.
+In this case, it's Asia Pacific (Hyderabad) (ap-south-2).
+
+provider "aws" {
+  region  = "ap-south-2"
+  profile -"default"
+}
