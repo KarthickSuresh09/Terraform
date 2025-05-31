@@ -1,5 +1,11 @@
 terraform + verb
 
+terraform init ==> it will init & download the require terraform plugins
+terraform validate ==> verify the your code synatx and everthing
+terraform plan ==> is like a dry what this going to do
+terraform apply ==> it will run code in .tf files
+terraform apply--auto-approve ===> it will not ask confirmation like "yes" or "No"
+
 Main commands:
   init          Prepare your working directory for other commands (terraform init ==> it will download the require terraform plugins)
   validate      Check whether the configuration is valid (terraform validate ==> verify the your code synatx and everthing)
