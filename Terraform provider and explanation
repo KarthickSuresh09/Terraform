@@ -1,3 +1,8 @@
+terra/
+├── provider.tf
+└── ec2.tf
+
+
 1. provider
 What This Means:
 provider "aws":
@@ -11,3 +16,24 @@ provider "aws" {
   region  = "ap-south-2"
   profile -"default"
 }
+
+
+2.Ec2
+resource "aws_instance" "instance1" {
+  ami           ="ami-0e386fa0b67b8b12c"
+  instance_type = "t3.micro"
+}
+Breakdown:
+* resource "aws_instance" "instance1":
+   This tells Terraform to create an EC2 instance in AWS.
+   "aws_instance" → the type of resource (EC2 instance).
+   "instance1" → the name/label you assign within Terraform.
+
+* ami = "ami-0e386fa0b67b8b12c":
+   Specifies the AMI ID (Amazon Machine Image) to use for the instance.
+   This ID determines the OS and base configuration (e.g., Amazon Linux, Ubuntu).
+   The AMI must be valid for the region set in the provider block.
+
+* instance_type = "t3.micro":
+   Sets the type of EC2 instance (CPU, memory, etc.).
+   t3.micro is a low-cost, general-purpose instance, good for light workloads.
