@@ -1,4 +1,5 @@
-                                                     Automate
+Terraform Created by ===> Hashi Corp
+                                                    Automate
                                                         |
                                                         |
                                             Automate the infra provisioning
@@ -6,8 +7,11 @@
                                                         |
                                             IAC ===> Infrastructure As Code
                                                         |
-                                                        
-
+                ____________________________________________________________________________
+               |                                                                           |
+             Terraform                                                               Cloud Formation
+                |                                                                          |
+       Work with Any Cloud                                                            Only in AWS
 
 
 
