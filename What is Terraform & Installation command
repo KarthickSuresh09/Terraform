@@ -1,4 +1,24 @@
-Terraform Created by ===> Hashi Corp
+Terraform : terraform is a infrastructure as code you can create, update and delete
+
+Terraform is Created by ===> Hashi Corp
+
+Why should we use terraform ?
+* Infrastructure as code 
+* Consistency
+* Automation
+* Version Control
+* Collabration
+* scalability
+* multi-cloud support
+
+
+types of files and extension in terraform
+* terraform file extention :".tf" 
+* resource state : ".tfstate"
+* variables : ".tfvars"
+* JSON version of .tf files ".tf.json"
+
+
                                                     Automate
                                                         |
                                                         |
