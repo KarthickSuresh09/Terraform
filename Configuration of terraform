@@ -1,7 +1,45 @@
-Step 1:
-you need to cerate user and accesskey & secretkey
-accesskey: AKIA2CUNLGFCQYF7CEM6
-secretkey: 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
+Step 1: 
+We need to install Aws cli in where is terraform running mostly prefer snap version 
+aws cli installation link: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+
+Step 2:
+Aws Configure
+you need to cerate IAM user
+In the search bar, type IAM and click on it.
+ ==> Open IAM Service
+  * Create User
+               In the left menu, click Users.
+               Click the "Create users" button
+
+==> Attach policy directly:
+ * Choose one:
+              Attach policies directly (e.g., AdministratorAccess)
+              The Iam user need AdministratorAccess
+
+==> Go to Users:
+             Click Users in the left sidebar.
+             Select the IAM user name for whom you want to create access keys. 
+
+==> Go to Security Credentials Tab:
+                          Click on the “Security credentials” tab.
+
+==> Create Access Key:
+                  Scroll to Access keys section.
+                  Click “Create access key”.
+
+==> Use Case:
+                  Choose the use case (e.g., Command Line Interface (CLI)).
+                  Click Next.
+
+==> View and Save Access Keys
+                  After creation, you will see:
+                  Access key ID
+                  Secret access key
+                  Download the .csv file or copy/save both securely.
+                  and accesskey & secretkey
+                  accesskey: AKIA2CUNLGFCQYF7CEM6
+                  secretkey: ER07FFLEPxl7YgdXkRZSdXdsrWI53g+rBAI0gPI7
+
 
 example:
 [root@ip-172-31-2-5 ec2-user]# aws configure
