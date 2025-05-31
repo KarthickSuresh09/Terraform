@@ -39,7 +39,8 @@ In the search bar, type IAM and click on it.
                   and accesskey & secretkey
                   accesskey: AKIA2CUNLGFCQYF7CEM6
                   secretkey: ER07FFLEPxl7YgdXkRZSdXdsrWI53g+rBAI0gPI7
-        example:
+        
+AWS console example:
               [root@ip-172-31-2-5 ec2-user]# aws configure
               AWS Access Key ID [None]:AKIA2CUNLGFCQYF7CEM6
               AWS Secret Access Key [None]: ER07FFLEPxl7YgdXkRZSdXdsrWI53g+rBAI0gPI7
@@ -51,5 +52,6 @@ step 3:
 cd root
 cd .aws
 cat config
+/root/.aws
 we need to create terraform configuration file in this path /root/my_terraform_script
 This is the path of downloaded terraform plugins root/my_terraform_script/.terraform/providers/registry.terraform.io/hashicorp/aws
