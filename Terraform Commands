@@ -1,5 +1,5 @@
 Main commands:
-  init          Prepare your working directory for other commands
+  init          Prepare your working directory for other commands (terraform init ==> it will download the require terraform plugins)
   validate      Check whether the configuration is valid
   plan          Show changes required by the current configuration
   apply         Create or update infrastructure
