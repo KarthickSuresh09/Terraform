@@ -18,6 +18,10 @@ types of files and extension in terraform
 * variables : ".tfvars"
 * JSON version of .tf files ".tf.json"
 
+"+" ===> Insert
+"-" ===> delete
+"~" ===> update
+
 
                                                     Automate
                                                         |
