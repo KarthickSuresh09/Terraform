@@ -152,3 +152,34 @@ Terraform will perform the following actions:
     }
 
 
+=====> After running terraform apply it will change the instance type
+
+root@ip-172-31-14-52:/home/ubuntu/terra# terraform apply --auto-approve
+aws_instance.instance1: Refreshing state... [id=i-0595f9c32521d6dff]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  ~ update in-place
+
+Terraform will perform the following actions:
+
+  # aws_instance.instance1 will be updated in-place
+  ~ resource "aws_instance" "instance1" {
+        id                                   = "i-0595f9c32521d6dff"
+      ~ instance_type                        = "t3.nano" -> "t3.micro"
+      ~ public_dns                           = "ec2-40-192-119-17.ap-south-2.compute.amazonaws.com" -> (known after apply)
+      ~ public_ip                            = "40.192.119.17" -> (known after apply)
+        tags                                 = {}
+        # (36 unchanged attributes hidden)
+
+        # (8 unchanged blocks hidden)
+    }
+
+Plan: 0 to add, 1 to change, 0 to destroy.
+aws_instance.instance1: Modifying... [id=i-0595f9c32521d6dff]
+aws_instance.instance1: Still modifying... [id=i-0595f9c32521d6dff, 00m10s elapsed]
+aws_instance.instance1: Still modifying... [id=i-0595f9c32521d6dff, 00m20s elapsed]
+aws_instance.instance1: Still modifying... [id=i-0595f9c32521d6dff, 00m30s elapsed]
+aws_instance.instance1: Still modifying... [id=i-0595f9c32521d6dff, 00m40s elapsed]
+aws_instance.instance1: Still modifying... [id=i-0595f9c32521d6dff, 00m50s elapsed]
+aws_instance.instance1: Still modifying... [id=i-0595f9c32521d6dff, 01m00s elapsed]
+aws_instance.instance1: Modifications complete after 1m1s [id=i-0595f9c32521d6dff]
