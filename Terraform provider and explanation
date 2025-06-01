@@ -170,3 +170,28 @@ aws_instance.instance1: Creation complete after 13s [id=i-0595f9c32521d6dff]
 ec2.tf ----------------------->our Code
 provider.tf ------------------>Our Code
 terraform.tfstate ---------------------> A Single Source of Truth for Terraform in this file have A to Z have our terraform 
+
+
+
+===> If you manually change the instance type from t3.micro to t3.nano and then execute <code>terraform plan</code>, it will display a message like this.
+root@ip-172-31-14-52:/home/ubuntu/terra# terraform plan
+aws_instance.instance1: Refreshing state... [id=i-0595f9c32521d6dff]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  ~ update in-place
+
+Terraform will perform the following actions:
+
+  # aws_instance.instance1 will be updated in-place
+  ~ resource "aws_instance" "instance1" {
+        id                                   = "i-0595f9c32521d6dff"
+      ~ instance_type                        = "t3.nano" -> "t3.micro"
+      ~ public_dns                           = "ec2-40-192-119-17.ap-south-2.compute.amazonaws.com" -> (known after apply)
+      ~ public_ip                            = "40.192.119.17" -> (known after apply)
+        tags                                 = {}
+        # (36 unchanged attributes hidden)
+
+        # (8 unchanged blocks hidden)
+    }
+
+Plan: 0 to add, 1 to change, 0 to destroy.
