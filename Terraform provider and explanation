@@ -156,3 +156,9 @@ Terraform will perform the following actions:
       + root_block_device (known after apply)
     }
 
+====> after running terraform apply the output is like this
+aws_instance.instance1: Creating...
+aws_instance.instance1: Still creating... [00m10s elapsed]
+aws_instance.instance1: Creation complete after 13s [id=i-0595f9c32521d6dff]
+
+* To connect this machine, you must modify the inbound rules to permit SSH port 22 in the default security group.
