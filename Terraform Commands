@@ -5,13 +5,15 @@ terraform validate ==> verify the your code synatx and everthing
 terraform plan ==> is like a dry what this going to do
 terraform apply ==> it will run code in .tf files
 terraform apply--auto-approve ===> it will not ask confirmation like "yes" or "No"
+terraform destroy ==> it will delete the resources
+terraform destroy --auto-approve ===> it will not ask confirmation like "yes" or "No"
 
 Main commands:
   init          Prepare your working directory for other commands (terraform init ==> it will download the require terraform plugins)
   validate      Check whether the configuration is valid (terraform validate ==> verify the your code synatx and everthing)
   plan          Show changes required by the current configuration (terraform plan ==> is like a dry what this going to do)
   apply         Create or update infrastructure (terraform apply ==> it will run .tf file)
-  destroy       Destroy previously-created infrastructure
+  destroy       Destroy previously-created infrastructure (terraform destroy means it will delete the resources)
 
 All other commands:
   console       Try Terraform expressions at an interactive command prompt
