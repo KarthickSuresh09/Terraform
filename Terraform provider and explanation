@@ -162,3 +162,11 @@ aws_instance.instance1: Still creating... [00m10s elapsed]
 aws_instance.instance1: Creation complete after 13s [id=i-0595f9c32521d6dff]
 
 * To connect this machine, you must modify the inbound rules to permit SSH port 22 in the default security group.
+
+
+===> after executing terraform apply 
+.terraform ---------------------->Plugins Download------------------------->This plugins code convert the code into API
+.terraform.lock.hcl
+ec2.tf ----------------------->our Code
+provider.tf ------------------>Our Code
+terraform.tfstate ---------------------> A Single Source of Truth for Terraform in this file have A to Z have our terraform 
