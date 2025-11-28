@@ -1,3 +1,5 @@
+---------------------------This is incomplete state-----------------------
+
 1. Destroy the previous deployments
 2. Create a script to install Apache2
 3. Run this script on a newly created EC2 instance
