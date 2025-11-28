@@ -28,6 +28,8 @@ resource "aws_instance" "simple_ec2" {
 ```
 Step 3: terraform init it will initiate all the terraform plugins in this folder
 
-Step 4: terraform validate means it is like dry run .tf files
+Step 4: terraform validet it will check the errors on .tf files
 
-Step 5: terraform apply or terraform apply --auto-approve this command will run terraform script
+Step 5: terraform plan means it is like dry run .tf files
+
+Step 6: terraform apply or terraform apply --auto-approve this command will run terraform script
