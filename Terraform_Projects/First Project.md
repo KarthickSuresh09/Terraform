@@ -12,7 +12,7 @@ provider "aws" {
 }
 ```
 ec2.tf
-
+```
 resource "aws_instance" "simple_ec2" {
   ami           = "ami-0f5fcdfbd140e4ab7" # <- use a valid AMI for your region
   instance_type = "t2.micro"
@@ -25,3 +25,4 @@ resource "aws_instance" "simple_ec2" {
     Name = "simple-ec2"
   }
 }
+```
