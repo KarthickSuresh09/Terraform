@@ -45,7 +45,7 @@ resource "aws_security_group" "web_sg" {
 }
 
 resource "aws_instance" "web" {
-  ami           = "ami-0f5fcdfbd140e4ab7"  # Amazon Linux 2023 for us-east-1
+  ami           = "ami-0f5fcdfbd140e4ab7" 
   instance_type = "t2.micro"
 
   vpc_security_group_ids = [aws_security_group.web_sg.id]
