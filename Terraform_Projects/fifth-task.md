@@ -16,11 +16,35 @@ sudo systemctl enable apache2
 sudo systemctl start apache2
 ```
 
-Step 3: use alrady have provider.tf files and create ec2.tf files inside tf file will create EC2 + User Data + SG
+Step 3: use alrady have provider.tf files and create main.tf files inside tf file will create EC2 + VPC + SG
 ```
-resource "aws_security_group" "web_sg" {
+# Get default VPC
+data "aws_vpc" "default" {
+  default = true
+}
+
+# Get latest Ubuntu AMI in us-east-2
+data "aws_ami" "ubuntu" {
+  most_recent = true
+
+  owners = ["099720109477"] # Canonical
+
+  filter {
+    name   = "name"
+    values = ["ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-*"]
+  }
+
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
+}
+
+# Security Group
+resource "aws_security_group" "apache_sg" {
   name        = "apache-sg"
   description = "Allow HTTP and SSH"
+  vpc_id      = data.aws_vpc.default.id
 
   ingress {
     from_port   = 22
@@ -29,7 +53,7 @@ resource "aws_security_group" "web_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-    ingress {
+  ingress {
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
@@ -44,19 +68,24 @@ resource "aws_security_group" "web_sg" {
   }
 }
 
-resource "aws_instance" "web" {
-  ami           = "ami-0f5fcdfbd140e4ab7" 
+# EC2 instance
+resource "aws_instance" "apache" {
+  ami           = data.aws_ami.ubuntu.id
   instance_type = "t2.micro"
 
-  vpc_security_group_ids = [aws_security_group.web_sg.id]
+  vpc_security_group_ids = [aws_security_group.apache_sg.id]
 
-  user_data = file("apache.sh")
-
-  associate_public_ip_address = true
+  user_data = file("${path.module}/apache.sh")
 
   tags = {
-    Name = "apache-ec2"
+    Name = "Apache-Server"
   }
+}
+
+# Local file with IP
+resource "local_file" "apache_ip" {
+  filename = "${path.module}/ec2-ip.txt"
+  content  = aws_instance.apache.public_ip
 }
 ```
 
