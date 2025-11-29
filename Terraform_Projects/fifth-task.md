@@ -89,20 +89,17 @@ resource "local_file" "apache_ip" {
 }
 ```
 
-Step 4:
-```
-```
+Step 4: Now run terraform script
+
 This is folder Structure 
-apache-ec2-project/
-│
-├── provider.tf
-├── ec2.tf
-├── outputs.tf
-├── local_file.tf
-│
+.
 ├── apache.sh
-│
-└── terraform.tfstate        (auto-created after apply)
+├── ec2-ip.txt (ec2-ip.txt file will created after terraform script executed sucessfully)
+├── main.tf
+├── provider.tf
+└── terraform.tfstate
+
+Step 5: terraform destroy is command to delete what to you created
 
 to check logs this command
 sudo cat /var/log/cloud-init-output.log
